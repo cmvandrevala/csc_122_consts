@@ -1,11 +1,26 @@
-# CSC 122 - Consts
+# Consts
 
-Software engineering is not just about programming. Rather, it is a collaborative effort that involves working with other people over an extended time. The `const` keyword allows programmers to express an unchanging "thing" in C++ (e.g. a variable, a class state, etc.). This allows programmers to reason about the code.
+This repository goes over some of the basics of binary search trees.
 
-The `const` keyword offers a few benefits:
+## Building Executables With CMake Via the Terminal
 
-1. As a program becomes bigger, invariants cannot be memorized among all team members. The `const` keyword allows us to encode them via the programming language.
-2. The C++ compiler can make a number of optimizations if it knows that certain quantities will not change.
-3. Certain programming paradigms like parallel programming depend on invariant quantities that can be shared between processes.
-4. Program analysis software can perform a more thorough job by leveraging information about what quantities are marked as `const`.
-5. As weird as it sounds, engineers *like* a certain number of restrictions. Restrictions breed creativity.
+You can use [CMake][cmake] to compile and build the executables for the project. First, you need to create a `build/` directory in the project. The build directory will house all of the compiled files as well as the `Makefile` for the project. Note that we do NOT check the `build/` directory into version control since each person will have to regenerate the executables on their own machine.
+
+```bash
+mkdir build
+cd build
+```
+
+Once you are inside of the build directory, you can run the following command to build all of the executables for the project:
+
+```bash
+cmake .. && make
+```
+
+## Building Executables With CMake Via an IDE
+
+Many IDEs like [CLion][clion] and [Visual Studio][vs] have built-in support for CMake. You should be able to open the project and the IDE will automatically detect the `CMakeLists.txt` file. Then, the IDE will build all of the artifacts listed in the file.
+
+[clion]: https://www.jetbrains.com/clion/
+[cmake]: https://cmake.org/
+[vs]: https://visualstudio.microsoft.com/
